@@ -1,10 +1,8 @@
 package steps;
 
+import io.restassured.response.Response;
 import pojo.BookingDTO;
-import utils.ExcelUtils;
-import utils.JsonReader;
-import utils.ResponseHandler;
-import utils.TestContext;
+import utils.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

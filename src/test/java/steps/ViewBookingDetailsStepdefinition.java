@@ -4,6 +4,7 @@ import pojo.BookingDetailsDTO;
 import pojo.BookingID;
 import utils.ResponseHandler;
 import utils.TestContext;
+import utils.SchemaReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -81,30 +82,10 @@ public class ViewBookingDetailsStepdefinition {
 
 	@Then("user validates the response with JSON schema {string}")
 	public void userValidatesResponseWithJSONSchema(String schemaFileName) {
-//		context.response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("resources/schemas/"+schemaFileName));
-//		LOG.info("Successfully Validated schema from "+schemaFileName);
-
-		// Construct the path to the schema file
-		String schemaFilePath = Paths.get("resources/schemas", schemaFileName).toString();
-
-		// Verify that the file exists
-		if (!Files.exists(Paths.get(schemaFilePath))) {
-			LOG.error("Schema file not found: " + schemaFileName);
-			throw new IllegalArgumentException("Schema to use cannot be null");
-		}
-
-		try {
-			// Read the schema file content
-			String schemaContent = new String(Files.readAllBytes(Paths.get(schemaFilePath)));
-
-			// Validate the response against the schema content
-			context.response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schemaContent));
-
-			LOG.info("Successfully validated schema from " + schemaFileName);
-		} catch (IOException e) {
-			LOG.error("Error reading schema file: " + schemaFileName, e);
-			throw new RuntimeException("Error reading schema file", e);
-		}
+		String schemaContent = SchemaReader.readSchema(schemaFileName);
+		// Validate the response against the schema content
+		context.response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schemaContent));
+		LOG.info("Successfully validated schema from " + schemaFileName);
 	}
 	
 	@When("user makes a request to check the health of booking service")
