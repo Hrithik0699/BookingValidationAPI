@@ -1,9 +1,9 @@
 package steps;
 
-import com.api.model.BookingDetailsDTO;
-import com.api.model.BookingID;
-import com.api.utils.ResponseHandler;
-import com.api.utils.TestContext;
+import pojo.BookingDetailsDTO;
+import pojo.BookingID;
+import utils.ResponseHandler;
+import utils.TestContext;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

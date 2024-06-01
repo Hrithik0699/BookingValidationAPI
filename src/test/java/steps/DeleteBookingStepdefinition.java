@@ -1,6 +1,6 @@
 package steps;
 
-import com.api.utils.TestContext;
+import utils.TestContext;
 import io.cucumber.java.en.When;
 
 public class DeleteBookingStepdefinition {

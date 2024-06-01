@@ -1,10 +1,10 @@
 package steps;
 
-import com.api.model.BookingDetailsDTO;
-import com.api.utils.ExcelUtils;
-import com.api.utils.JsonReader;
-import com.api.utils.ResponseHandler;
-import com.api.utils.TestContext;
+import pojo.BookingDetailsDTO;
+import utils.ExcelUtils;
+import utils.JsonReader;
+import utils.ResponseHandler;
+import utils.TestContext;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
 import org.apache.log4j.LogManager;
