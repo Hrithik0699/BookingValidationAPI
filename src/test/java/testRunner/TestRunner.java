@@ -10,12 +10,12 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(
         plugin = {"pretty:target/cucumber/cucumber.txt",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                //"html:target/cucumber/report",
+//                "html:target/cucumber/report",
                 "json:target/cucumber/cucumber.json",
-                "com.api.utils.MyTestListener"
+                "utils.MyTestListener"
         }
-        ,features= {"src/test/resources/features"}
-        ,glue = {"com.api.stepdefinition"}
+        ,features= {"scenarios"}
+        ,glue = {"steps"}
         //,dryRun = true
         ,monochrome = true
         ,snippets = SnippetType.CAMELCASE

@@ -11,6 +11,10 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import static org.junit.Assert.*;
 
 public class ViewBookingDetailsStepdefinition {
@@ -77,8 +81,30 @@ public class ViewBookingDetailsStepdefinition {
 
 	@Then("user validates the response with JSON schema {string}")
 	public void userValidatesResponseWithJSONSchema(String schemaFileName) {
-		context.response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/"+schemaFileName));
-		LOG.info("Successfully Validated schema from "+schemaFileName);
+//		context.response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("resources/schemas/"+schemaFileName));
+//		LOG.info("Successfully Validated schema from "+schemaFileName);
+
+		// Construct the path to the schema file
+		String schemaFilePath = Paths.get("resources/schemas", schemaFileName).toString();
+
+		// Verify that the file exists
+		if (!Files.exists(Paths.get(schemaFilePath))) {
+			LOG.error("Schema file not found: " + schemaFileName);
+			throw new IllegalArgumentException("Schema to use cannot be null");
+		}
+
+		try {
+			// Read the schema file content
+			String schemaContent = new String(Files.readAllBytes(Paths.get(schemaFilePath)));
+
+			// Validate the response against the schema content
+			context.response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schemaContent));
+
+			LOG.info("Successfully validated schema from " + schemaFileName);
+		} catch (IOException e) {
+			LOG.error("Error reading schema file: " + schemaFileName, e);
+			throw new RuntimeException("Error reading schema file", e);
+		}
 	}
 	
 	@When("user makes a request to check the health of booking service")

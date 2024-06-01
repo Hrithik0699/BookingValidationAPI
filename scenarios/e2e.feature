@@ -1,5 +1,5 @@
 @bookerAPI @e2e
-@Author: Hrithik
+@Author:Hrithik
 Feature: To test end to end operation in restful-booker
 
   Background: create an auth token

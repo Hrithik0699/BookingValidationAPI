@@ -18,7 +18,7 @@ public class PropertiesFile {
 	public static String getProperty(String property) {		
 
 		try {
-			fis = new FileInputStream(new File("config.properties"));
+			fis = new FileInputStream(new File("resources/config.properties"));
 			prop = new Properties();
 			prop.load(fis);
 		} catch(FileNotFoundException fnfe) {

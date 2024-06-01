@@ -1,5 +1,5 @@
 @bookerAPI @createBooking
-@Author: Hrithik
+@Author:Hrithik
 Feature: To create a new booking using restful-booker
 
   @createBookingDataTable

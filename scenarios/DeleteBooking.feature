@@ -1,5 +1,5 @@
 @bookerAPI @deleteBooking
-@Author: Hrithik
+@Author:Hrithik
 Feature: To delete a booking in restful-booker
 
   Background: create an auth token

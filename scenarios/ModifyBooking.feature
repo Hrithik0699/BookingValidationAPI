@@ -1,5 +1,5 @@
 @bookerAPI @updateBooking
-@Author: Hrithik
+@Author:Hrithik
 Feature: To update a booking in restful-booker
 
   Background: create an auth token
