@@ -1,7 +1,6 @@
 package pojo;
 
-public class BookingDTO
-{
+public class BookingDTO {
     private BookingDetailsDTO booking;
 
     private String bookingid;

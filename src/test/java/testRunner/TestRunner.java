@@ -17,7 +17,7 @@ import io.cucumber.testng.CucumberOptions;
         //,dryRun = true
         ,monochrome = true
         ,snippets = CucumberOptions.SnippetType.CAMELCASE
-        ,tags = "@e2e"
+        ,tags = "@createBooking"
         //,publish = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {

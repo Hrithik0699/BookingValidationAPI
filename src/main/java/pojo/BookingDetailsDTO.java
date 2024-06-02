@@ -1,7 +1,6 @@
 package pojo;
 
-public class BookingDetailsDTO
-{
+public class BookingDetailsDTO {
     private String firstname;
 
     private String additionalneeds;
