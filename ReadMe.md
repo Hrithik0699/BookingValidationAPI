@@ -34,5 +34,19 @@ To set up the project locally, follow these steps:
 - **Java**: Ensure Java is installed on your machine. You can download it from [here](https://www.oracle.com/java/technologies/javase-downloads.html).
 - **Maven**: Apache Maven is required for managing dependencies and building the project. Download it from [here](https://maven.apache.org/download.cgi).
 
+### Installation
 
+1. **Clone the repository:**
 
+   ```sh
+   git clone https://github.com/hrneogi7/BookerShield.git
+   cd BookerShield
+2. **Install Dependencies**
+    ```sh
+   mvn clean install
+
+### Running tests
+
+To execute the tests, use the following command:
+```sh
+    mvn test
