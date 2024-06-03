@@ -8,10 +8,14 @@ Welcome to **BookerShield**, an extensive testing suite designed for robust vali
 - [Features](#features)
 - [Setup](#setup)
 - [Running Tests](#running-tests)
-- [Test Reports](#test-reports)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+
+[//]: # (- [Test Reports]&#40;#test-reports&#41;)
+
+[//]: # (- [Project Structure]&#40;#project-structure&#41;)
+
+[//]: # (- [Contributing]&#40;#contributing&#41;)
+
+[//]: # (- [License]&#40;#license&#41;)
 
 ## Introduction
 
